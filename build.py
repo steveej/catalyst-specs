@@ -58,7 +58,7 @@ if len(sys.argv) > 0:
     target = sys.argv[1]
     if os.path.exists(target):
         subprocess.call('catalyst -c catalyst.conf \
-                -f {}'.format(target))
+                -f {}'.format(target), shell=True)
     else:
         print('{} does not exist.'.format(target))
 
