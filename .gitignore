@@ -1,6 +1,6 @@
 download/
 packages/
 snapshots/
-snapchat_cache/
+snapshot_cache/
 tmp/
 *.tar.bz2
