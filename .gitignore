@@ -3,4 +3,5 @@ packages/
 snapshots/
 snapshot_cache/
 tmp/
+overlay/
 *.tar.bz2*
