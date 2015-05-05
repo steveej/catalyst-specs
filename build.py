@@ -37,10 +37,10 @@ for filename, url in urls.items():
     else:
         print('resuing {}'.format(path))
 
+print(urls)
+
 portage_env = { 
     'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confir')
 } 
-
-print(urls)
 
 #subprocess.call('emaint sync -r steveeJ', shell=True, env=portage_env)

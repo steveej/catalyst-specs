@@ -1,4 +1,4 @@
-# stage4 specfile
+# stage3 specfile
 # used to build a stage4
 subarch: amd64
 version_stamp: stage4-ceph-amd64-nomultilib-20150504
@@ -7,7 +7,7 @@ rel_type: container
 profile: steveeJ:container/linux/amd64-native/ceph
 snapshot: 20150504
 source_subpath: ../download/stage3-amd64-nomultilib-20150430
-portage_confdir: confdir
+portage_confdir: /var/tmp/download/confdir
 pkgcache_path: packages/container/amd64-nomultilib
 portage_overlay: /usr/local/portage/personal-portage-overlay
 stage4/packages: @profile
