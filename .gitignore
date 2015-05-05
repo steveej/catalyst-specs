@@ -1,2 +1,6 @@
 download/
+packages/
+snapshots/
+snapchot_cache/
+tmp/
 *.tar.bz2
