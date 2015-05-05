@@ -8,7 +8,7 @@ profile: steveeJ:container/linux/amd64-native/ceph
 snapshot: 2015.05.04
 source_subpath: prebuilt/stage3-amd64-nomultilib-20150430
 portage_confdir: confdir
-pkgcache_path: pkgs
+pkgcache_path: packages/container/amd64-nomultilib
 portage_overlay: /usr/local/portage/personal-portage-overlay
 stage4/packages: @profile
 stage4/fsscript: stage4-ceph-amd64-nomultilib.fsscript
