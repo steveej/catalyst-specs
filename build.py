@@ -50,13 +50,15 @@ for filename, url in urls.items():
         print('reusing {}'.format(path))
 
 
-# sync portage
-portage_env = 'PORTAGE_CONFIGROOT={}'.format(os.path.join(abs_dir, 'confdir'))
-subprocess.call('{} emaint sync -r gentoo'.format(portage_env), shell=True)
+# create today's portage snapshot
+#today = str(datetime.date.today()).replace('-','')
+today = '20150504'
+snapshot = 'portage-{}.tar.bz2'.format(today)
+if not os.path.exists(os.path.join('snapshots',snapshot)):
+    portage_env = 'PORTAGE_CONFIGROOT={}'.format(os.path.join(abs_dir, 'confdir'))
+    subprocess.call('{} emaint sync -r gentoo'.format(portage_env), shell=True)
 
-# create snapshot
-today = str(datetime.date.today()).replace('-','')
-subprocess.call('catalyst -s {}'.format(today), shell=True)
+    subprocess.call('catalyst -s {}'.format(today), shell=True)
 
 # run catalyst
 target = None
