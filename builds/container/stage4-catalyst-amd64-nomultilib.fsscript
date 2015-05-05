@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/emerge --depclean --with-bdeps=n
