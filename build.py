@@ -54,8 +54,7 @@ for filename, url in urls.items():
 portage_env = { 
     'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confir')
 } 
-subprocess.call('emaint sync -r gentoo'.format(target), env,
-        portage_env, shell=True)
+subprocess.call('emaint sync -r gentoo', env, portage_env, shell=True)
 
 # create snapshot
 today = str(datetime.date.today()).replace('-','')
