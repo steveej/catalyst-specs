@@ -52,7 +52,7 @@ for filename, url in urls.items():
 
 # sync portage
 portage_env = { 
-    'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confir')
+    'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confdir')
 } 
 subprocess.call('emaint sync -r gentoo', env=portage_env, shell=True)
 
