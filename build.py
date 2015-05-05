@@ -60,5 +60,5 @@ if len(sys.argv) > 0:
         subprocess.call('catalyst -c catalyst.conf \
                 -f {}'.format(target))
     else:
-        print('{} does not exist.'.format(target)
+        print('{} does not exist.'.format(target))
 
