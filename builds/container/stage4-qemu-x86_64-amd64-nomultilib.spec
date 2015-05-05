@@ -9,7 +9,7 @@ snapshot: 20150504
 source_subpath: ../download/stage3-amd64-nomultilib-20150430
 portage_confdir: /var/tmp/catalyst/confdir
 pkgcache_path: packages/container/amd64-nomultilib
-portage_overlay: /usr/local/portage/personal-portage-overlay
+portage_overlay: /var/tmp/catalyst/overlay
 stage4/packages: @profile
 stage4/fsscript: /var/tmp/catalyst/builds/container.fsscript
 #stage4/root_overlay: qemu-x86_64_root_overlay
