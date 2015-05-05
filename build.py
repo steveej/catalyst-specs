@@ -4,6 +4,7 @@ import subprocess
 import os
 import urlgrabber
 import sys
+import datetime
 
 abs_file = os.path.abspath(__file__)
 abs_dir = os.path.dirname(abs_file)
@@ -13,10 +14,6 @@ mirror_base = {
     "amd64-nomultilib": 
         "http://distfiles.gentoo.org/releases/amd64/autobuilds/"
 }
-
-urls = {}
-
-
 
 # checkout portage overlay
 overlay_url = 'https://github.com/steveeJ/personal-portage-overlay.git'
@@ -31,6 +28,8 @@ else:
 # stage3
 if not os.path.exists('download'):
     os.mkdir('download')
+
+urls = {}
 for arch,mirror in mirror_base.items():
     latest_txt = urlgrabber.urlread(
             '{0}/latest-stage3-{1}.txt'.format(mirror ,arch))
@@ -51,11 +50,18 @@ for filename, url in urls.items():
         print('reusing {}'.format(path))
 
 
-# run catalyst
+# sync portage
 portage_env = { 
     'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confir')
 } 
+subprocess.call('emaint sync -r gentoo'.format(target), env,
+        portage_env, shell=True)
 
+# create snapshot
+today = str(datetime.date.today()).replace('-','')
+subprocess.call('catalyst -s {}'.format(today), shell=True)
+
+# run catalyst
 target = None
 if len(sys.argv) > 0:
     target = sys.argv[1]
