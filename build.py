@@ -7,6 +7,7 @@ import sys
 
 abs_file = os.path.abspath(__file__)
 abs_dir = os.path.dirname(abs_file)
+os.chdir(os.path.join(abs_dir) 
 
 mirror_base = {
     "amd64-nomultilib": 
@@ -23,7 +24,9 @@ if not os.path.exists('overlay'):
     subprocess.call('git clone {} overlay'.format(overlay_url),
             shell=True)
 else:
-    subprocess.call('git --worktree=overlay pull', shell=True)
+    os.chdir(os.path.join(abs_dir, 'overlay') 
+    subprocess.call('git pull', shell=True)
+    os.chdir(os.path.join(abs_dir) 
 
 # stage3
 if not os.path.exists('download'):
