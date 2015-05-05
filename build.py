@@ -19,7 +19,8 @@ urls = {}
 # checkout portage overlay
 overlay_url = 'https://github.com/steveeJ/personal-portage-overlay.git'
 if not os.path.exists('overlay'):
-    subprocess.call('git clone {} overlay'.format(overlay_url))
+    subprocess.call('git clone {} overlay'.format(overlay_url),
+            shell=True)
 
 
 # stage3
