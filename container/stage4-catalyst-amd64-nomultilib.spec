@@ -1,7 +1,7 @@
 # stage4 specfile
 # used to build a stage4
 subarch: amd64
-version_stamp: 20150504
+version_stamp: nomultilib-container-20150504
 target: stage4
 rel_type: container
 profile: steveeJ:container/linux/amd64-native/catalyst
