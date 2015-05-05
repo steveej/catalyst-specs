@@ -14,9 +14,17 @@ mirror_base = {
 
 urls = {}
 
+
+
+# checkout portage overlay
+overlay_url = 'https://github.com/steveeJ/personal-portage-overlay.git'
+if not os.path.exists('overlay'):
+    subprocess.call('git clone {} overlay'.format(overlay_url))
+
+
+# stage3
 if not os.path.exists('download'):
     os.mkdir('download')
-
 for arch,mirror in mirror_base.items():
     latest_txt = urlgrabber.urlread(
             '{0}/latest-stage3-{1}.txt'.format(mirror ,arch))
@@ -28,7 +36,6 @@ for arch,mirror in mirror_base.items():
             suffix = s.split(' ')[0]
             filename = suffix.split('/')[1]
             urls[filename] = '{}/{}'.format(mirror,suffix)
-
 for filename, url in urls.items():
     path = os.path.join('download',filename)
     if not os.path.exists(path):
@@ -37,8 +44,8 @@ for filename, url in urls.items():
     else:
         print('resuing {}'.format(path))
 
-print(urls)
 
+# run catalyst
 portage_env = { 
     'PORTAGE_CONFIGROOT': os.path.join(abs_dir, 'confir')
 } 
