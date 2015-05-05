@@ -11,6 +11,6 @@ portage_confdir: /var/tmp/catalyst/confdir
 pkgcache_path: packages/container/amd64-nomultilib
 portage_overlay: /usr/local/portage/personal-portage-overlay
 stage4/packages: @profile
-stage4/fsscript: container.fsscript
+stage4/fsscript: /var/tmp/catalyst/builds/container.fsscript
 #stage4/root_overlay: ceph_root_overlay
 stage4/empty: /var/tmp /var/cache
