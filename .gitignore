@@ -3,4 +3,4 @@ packages/
 snapshots/
 snapshot_cache/
 tmp/
-*.tar.bz2
+*.tar.bz2*
