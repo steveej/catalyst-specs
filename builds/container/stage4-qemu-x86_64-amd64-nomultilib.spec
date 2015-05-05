@@ -1,7 +1,7 @@
 # stage3 specfile
 # used to build a stage4
 subarch: amd64
-version_stamp: stage4-qemu-x86_64-amd64-nomultilib-20150504
+version_stamp: qemu-x86_64-nomultilib-20150504
 target: stage4
 rel_type: container
 profile: steveeJ:container/linux/amd64-native/qemu-x86_64
