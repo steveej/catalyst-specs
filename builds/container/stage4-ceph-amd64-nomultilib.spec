@@ -5,8 +5,8 @@ version_stamp: stage4-ceph-amd64-nomultilib-20150504
 target: stage4
 rel_type: container
 profile: steveeJ:container/linux/amd64-native/ceph
-snapshot: 2015.05.04
-source_subpath: prebuilt/stage3-amd64-nomultilib-20150430
+snapshot: 20150504
+source_subpath: dowload/stage3-amd64-nomultilib-20150430
 portage_confdir: confdir
 pkgcache_path: packages/container/amd64-nomultilib
 portage_overlay: /usr/local/portage/personal-portage-overlay
