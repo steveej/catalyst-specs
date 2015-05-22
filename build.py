@@ -46,18 +46,26 @@ for filename, url in urls.items():
     if not os.path.exists(path):
         print('downloading {} to {}'.format(url,path))
         urlgrabber.urlgrab(url, filename=path)
+        new_path = os.path.join(path, '.stripped')
+        print('removig device nodes from {}'.format(path))
+        subprocess.call(
+            '{0} | {1} | { 2 }'.format(
+                'bunzip2 < {}'.format(path),
+                'tar -v --wildcards --delete "./dev/*"',
+                'bzip2 > {}'.format(new_path)),
+            shell=True)
+        os.rename(new_path, path)
     else:
         print('reusing {}'.format(path))
 
 
 # create today's portage snapshot
 #today = str(datetime.date.today()).replace('-','')
-today = '20150504'
+today = '20150521'
 snapshot = 'portage-{}.tar.bz2'.format(today)
 if not os.path.exists(os.path.join('snapshots',snapshot)):
     portage_env = 'PORTAGE_CONFIGROOT={}'.format(os.path.join(abs_dir, 'confdir'))
     subprocess.call('{} emaint sync -r gentoo'.format(portage_env), shell=True)
-
     subprocess.call('catalyst -s {}'.format(today), shell=True)
 
 # run catalyst
