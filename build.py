@@ -49,7 +49,7 @@ for filename, url in urls.items():
         new_path = os.path.join(path, '.stripped')
         print('removig device nodes from {}'.format(path))
         subprocess.call(
-            '{0} | {1} | { 2 }'.format(
+            '{0} | {1} | {2}'.format(
                 'bunzip2 < {}'.format(path),
                 'tar -v --wildcards --delete "./dev/*"',
                 'bzip2 > {}'.format(new_path)),
