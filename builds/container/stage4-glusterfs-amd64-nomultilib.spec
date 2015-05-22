@@ -1,11 +1,11 @@
 # stage3 specfile
 # used to build a stage4
 subarch: amd64
-version_stamp: glusterfs-nomultilib-20150504
+version_stamp: glusterfs-nomultilib-20150520
 target: stage4
 rel_type: container
 profile: steveeJ:container/linux/amd64-native/glusterfs
-snapshot: 20150504
+snapshot: 20150520
 source_subpath: ../download/stage3-amd64-nomultilib-20150430
 portage_confdir: /var/tmp/catalyst/confdir
 pkgcache_path: packages/container/amd64-nomultilib
