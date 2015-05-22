@@ -46,7 +46,7 @@ for filename, url in urls.items():
     if not os.path.exists(path):
         print('downloading {} to {}'.format(url,path))
         urlgrabber.urlgrab(url, filename=path)
-        new_path = os.path.join(path, '.stripped')
+        new_path = path + '.stripped'
         print('removig device nodes from {}'.format(path))
         subprocess.call(
             '{0} | {1} | {2}'.format(
